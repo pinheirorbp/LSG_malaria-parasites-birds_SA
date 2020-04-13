@@ -46,7 +46,7 @@ Table with information of each local community sampled (e.g., latitude and speci
 Table with basic information of each biome (e.g., bird richness sampled)
 <br>
 <br>
-<b>sem_effects.RData:</b>
+<b>sem_effects.RData:</b><br>
 Table with the effect (explained deviance) of each predictor in each response in the final structural equation model.
 <br>
 <br>
