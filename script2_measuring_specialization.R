@@ -2,7 +2,7 @@
 library(reshape2)
 library(bipartite)
 DS <- read.csv("Dataset.csv", h = T, sep = ",", colClasses = c(rep("character",6),rep(NA,2),rep("character",8)),na.strings = c("","NA"))
-load("com_data.RData")
+# load("com_data.RData")
 #DS.inf: dataset only with infected samples
 DS.inf <- subset(DS, !is.na(DS$Lineage1.Name))
 ### Calculating connectance, H2 and other information for each local network ####
@@ -31,7 +31,7 @@ for (cc in 1:length(Datasets.com)){
   else{ com_data$shos.mat[cc] <- com_data$spar[cc] <- com_data$H2[cc] <- com_data$connectance[cc]<- NA
   }
 }
-save(com_data,file="com_data.RData")
+# save(com_data,file="com_data.RData")
 rm(dataset.c,dataset.inf.c,Datasets.com,DS.inf,im.c,cc,DS)
 ### Calculating DSI for each local network ####
 ## To install package Dizzy: ##
@@ -51,7 +51,7 @@ Occ.Mat <- Occ.Mat[,-1]
 # Loading the bird phylogeny
 Tree <- read.tree(file = "bird_phylogeny.tre")
 # Measuring DSI
-Dizzy.comp <- dizzy::dsi(Int = Array, Phylo = Tree, Abund = Occ.Mat, Rep = 999, DSICom = T)
-com_data$DSI=Dizzy.comp$Loc$DSICOM
+Dizzy.comp <- dizzy::dsicom(Int = Array, Dist = Tree, Abund = Occ.Mat, Rep = 999, Part = F)
+com_data$DSI=Dizzy.comp$dsicom
 rm(Occ.Mat,Table,Array,Dizzy.comp,Tree)
 save(com_data,file="com_data.RData")
