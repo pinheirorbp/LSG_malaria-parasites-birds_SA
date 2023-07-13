@@ -1,4 +1,12 @@
-Here we share the raw data and the code to reproduce all the analysis of our study.
+Here we share the raw data and the code to reproduce all the analysis of the study:
+
+<b>The latitudinal specialization gradient of bird-malarial parasite networks in South America: lower connectance, but more evenly distributed interactions towards the equator</b>
+
+Rafael B. P. Pinheiro, Gabriel M. F. Felix, Jeffrey A. Bell and Alan Fecchio
+
+rafael-bpp@hotmail.com
+https://rbppinheiro.wordpress.com/
+
 
 <b>Dataset.csv:</b>
 “Dataset.csv” provides the raw data we used. Each line is an infection or a non-infected bird individual. That means that, individual birds detected with more than one parasite lineage (double and triple infections), are repeated in different lines. <br>
